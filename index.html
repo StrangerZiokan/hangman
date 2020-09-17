@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+        <meta content="utf-8" http-equiv="encoding">
+        <title>Hanging Man</title>
+    </head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+<script src="app.js"></script>
+<body ng-app="HangmanApp" ng-controller="GameController">
+
+<div>
+    <div>
+        Guesses Left:: {{guesses}}
+    </div>
+    <div>
+		<div style="min-width: 40%">
+			Correct Letters :: <span ng-repeat="letter in correctLettersChosen">{{letter}}</span>
+		</div>
+		<div style="min-width: 40%">
+			Incorrect Letters :: <span ng-repeat="letter in incorrectLettersChosen">{{letter}}</span>
+		</div>
+	</div>
+
+<div>You Have to guess: {{displayWord}} </div>
+    <div>
+            <div>
+                <input type = "text" name="guess" ng-model="input.letter">
+                <button ng-click="letterChosen()">Submit</button>
+            </div>
+    </div>
+</div>
+
+</body>
+</html>
